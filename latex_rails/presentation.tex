@@ -3,8 +3,8 @@
 \usepackage[utf8]{inputenc}
 \usepackage[brazil]{babel}  % Pacote
 \usepackage{mflogo}
-\usepackage{listings}
 \usepackage{caption}
+\usepackage{minted}
 \author{Amadeus Folego}
 \title{\LaTeX\ em aplicações Rails}
 \date{}
@@ -29,7 +29,7 @@
         \end{figure}
       \column{.8\textwidth}
         \begin{itemize}
-          \item "Pai" da análise de algoritmos \pause
+          \item \pause Análise de algoritmos \pause
           \item Números Surreais /w John Conway \pause
           \item Livros \pause
             \begin{itemize}
@@ -46,39 +46,68 @@
   \begin{frame}{\LaTeX\ ?}
     Por quê \LaTeX?\\\pause
     \begin{itemize}
-      \item{\fontfamily{cmr}\selectfont Excelência tipográfica (Computer Modern)\pause
+      \item{\fontfamily{cmr}\selectfont É necessário excelência tipográfica!\pause
         \begin{itemize}
-          \item Knuth, ao receber a prévia da segunda edição do {\em Concrete Mathematics}\pause
+          \item Ao receber a prévia da segunda edição do {\em Concrete Mathematics}\pause
         \end{itemize}}
       \item \TeX\ $\implies$ \LaTeX\ \ \ \scriptsize{1976 Knuth - 1980's Leslie Lamport}\pause
       \item Um dos primeiros projetos de software livre\pause
-      \item Comunidade enorme (praticamente a maioria dos cientistas), milhares de pacotes e tipos de documento
+      \item Comunidade enorme (praticamente a maioria dos cientistas)
     \end{itemize}
   \end{frame}
-  \begin{frame}{Capacidades}
-    \onslide<1>{$ \rightarrow $} Conteúdo sobre formatação\\\pause
-    \onslide<2>{$ \rightarrow $} Extremamente extensivo\\\pause
-    \onslide<3>{$ \rightarrow $} É apenas texto\\\pause
-    \onslide<4->{$ \rightarrow $} Expressões matemáticas\\\pause 
-      $$ \oint_{D} B\cdot n\ dS = 0 $$ 
-    \onslide<5>\pause\href{doc/rogers}{\beamerbutton{Exemplo}}
-  \end{frame}
-  \lstset{extendedchars=false,language=tex,basicstyle=\ttfamily}
-  \begin{frame}{Pedaços de código}
-    \lstinputlisting[firstline=1,lastline=8,title=Declaração]{presentation.tex}
-  \end{frame}
-  \begin{frame}{Pedaços de código}
-    \lstinputlisting[firstline=17,lastline=21,title=Comandos]{presentation.tex}
-  \end{frame}
+  \begin{frame}[fragile]{Capacidades}
+    \onslide<1,2>{$ \rightarrow $} Conteúdo sobre formatação\pause\ {\scriptsize-- em oposição a \texttt{WYSIWYG}}\\\pause
+    \onslide<3>{$ \rightarrow $} Extremamente extensivo\\\pause
+    \onslide<4>{$ \rightarrow $} É apenas texto\\\pause
+    \onslide<5->{$ \rightarrow $} Expressões matemáticas\\\pause 
+      $$ \oint_{D} B\cdot n\ dS = 0 $$
+    \begin{center}
+      \onslide<6->\pause\href{doc/rogers}{\beamerbutton{Exemplo}}\\
+      \onslide<7->\pause\href{http://www.amazon.com/gp/product/1449314635}{\beamerbutton{Think Complexity}}
+    \end{center}
+\end{frame}
+  \begin{frame}[fragile]{Código}
+    Comandos da forma: \mint{tex}|  \comando[opcao]{argumento}|\pause
+    Fórmulas chamadas por comandos ou cercadas por {\texttt \$}: \mint{tex}|$$ \oint_{D} B\cdot n\ dS = 0 $$|
+\end{frame}
+  \begin{frame}[fragile]{Código}
+    \center {\Large Conteúdo sobre formato}\pause
+    \begin{itemize}
+    \item Artigo? \pause \mint{tex}|\documentclass{article}|\pause
+    \item Livro? \pause \mint{tex}|\documentclass{book}|\pause
+    \item Implementar um milhão de regras da abnt? \pause \mint{tex}|\documentclass{abnt}|
+            \large{AbnTex {\em (Absurdas Normas em Tex)}}\pause
+    \item Fazer o sumário do seu livro quilométrico?\pause \mint{tex}|\tableofcontents|
+    \end{itemize}
+\end{frame}
+  \begin{frame}[fragile]{Código}
+    Estrutura básica de um header:
+    \begin{minted}{tex}
+      \documentclass{beamer}
+      \usetheme{Copenhagen}
+      \usepackage[utf8]{inputenc}
+      \usepackage[brazil]{babel}
+      % pacotes, classe de documento, configuracoes macro
+    \end{minted}
+    \pause\begin{minted}{tex}
+      \author{Amadeus Folego}
+      \title{\LaTeX\ em aplicacoes Rails}
+      % algumas informacoes
+    \end{minted}
+    \pause\begin{minted}{tex}
+      \begin{document}
+      % aqui o bicho pega
+    \end{minted}
+\end{frame}
   \begin{frame}{Desvantagens}
     \onslide<1->{ $ \rightsquigarrow $ } Exige muitas dependências\\\pause
     \onslide<2->{ $ \rightsquigarrow $ } É compilado\\\pause
     \onslide<3> { $ \rightsquigarrow $ } Barreira inicial de aprendizado
   \end{frame}
   \begin{frame}{Motivação} 
-    \onslide<1>{$ \nabla $} Aplicações web, geração de documentos\\\pause
-    \onslide<2>{$ \nabla $} Latex é apenas texto\\\pause
-    \onslide<3>{$ \nabla $} Quantidade enorme de tipos de documento\\
+    \onslide<1>{$ \nabla $} Latex é apenas texto\\\pause
+    \onslide<2>{$ \nabla $} Quantidade enorme de tipos de documento\\\pause
+    \onslide<3>{$ \nabla $} Aplicações web! Gerar documentos!\\
   \end{frame}
   \begin{frame}{Fim} 
     \begin{center} \fontfamily{cmr}\selectfont \Huge FIM \end{center}
