@@ -29,17 +29,15 @@
         \end{figure}
       \column{.8\textwidth}
         \begin{itemize}
-          \item Análise de algoritmos\pause
-          \item \pause Números Surreais /w John Conway\pause
+          \item Análise de algoritmos \pause
+          \item Números Surreais /w John Conway \pause
           \item Livros \pause
             \begin{itemize}
               \item {\em The Art of Computer Programming (TAOCP) - 1969} \pause
               \item {\em Concrete Mathematics - 1970} \pause 
-              \begin{itemize}
-                \item {\scriptsize Um dólar hexadecimal por cada erro técnica, histórica, tipográfica ou politicamente incorreto \ (\$ 2.56)} \pause 
-              \end{itemize}
             \end{itemize}
-          \item \MF\ e \TeX\ 
+          \item \MF\pause
+          \item \TeX\ 
         \end{itemize}
     \end{columns}
   \end{frame}
@@ -50,16 +48,17 @@
         \begin{itemize}
           \item Ao receber a prévia da segunda edição do {\em Concrete Mathematics}\pause
         \end{itemize}}
-      \item \TeX\ $\implies$ \LaTeX\ \ \ \scriptsize{1976 Knuth - 1980's Leslie Lamport}\pause
+      \item \TeX\ $\implies$ \LaTeX\ \ \ {\scriptsize 1976 Knuth - 1980's Leslie Lamport}\pause
       \item Um dos primeiros projetos de software livre\pause
       \item Comunidade enorme (praticamente a maioria dos cientistas)
     \end{itemize}
   \end{frame}
   \begin{frame}[fragile]{Capacidades}
     \onslide<1,2>{$ \rightarrow $} Conteúdo sobre formatação\pause\ {\scriptsize-- em oposição a \texttt{WYSIWYG}}\\\pause
-    \onslide<3>{$ \rightarrow $} Extremamente extensivo\\\pause
-    \onslide<4>{$ \rightarrow $} É apenas texto\\\pause
-    \onslide<5->{$ \rightarrow $} Expressões matemáticas\\\pause 
+    \onslide<3>{$ \rightarrow $} Linguagem Turing-Completa\\\pause
+    \onslide<4>{$ \rightarrow $} Extremamente extensivo\\\pause
+    \onslide<5>{$ \rightarrow $} É apenas texto\\\pause
+    \onslide<6->{$ \rightarrow $} Expressões matemáticas\\\pause 
       $$ \oint_{D} B\cdot n\ dS = 0 $$
     \begin{center}
       \onslide<6>\pause\href{doc/rogers}{\beamerbutton{Exemplo}}\\
@@ -80,7 +79,7 @@
     \end{itemize}
 \end{frame}
   \begin{frame}[fragile]{Código}
-    Estrutura básica de um header:
+    Estrutura básica de um arquivo {\texttt .tex}:
     \begin{minted}{tex}
       \documentclass{beamer}
       \usetheme{Copenhagen}
@@ -104,9 +103,10 @@
     \onslide<3> { $ \rightsquigarrow $ } Barreira inicial de aprendizado
   \end{frame}
   \begin{frame}{Motivação} 
-    \onslide<1>{$ \nabla $} Latex é apenas texto\\\pause
-    \onslide<2>{$ \nabla $} Quantidade enorme de tipos de documento\\\pause
-    \onslide<3>{$ \nabla $} Aplicações web! Gerar documentos!\\
+    \onslide<1>{$ \nabla $} Mudança de paradigma $\rightarrow$ {\tiny Sites com conteúdo textual $ \implies $ Aplicações Web}\\\pause
+    \onslide<2>{$ \nabla $} Geração de Documentos\\\pause
+    \onslide<3>{$ \nabla $} Latex é apenas texto\\\pause
+    \onslide<4>{$ \nabla $} Quantidade enorme de tipos de documento\\
   \end{frame}
   \begin{frame}{Exemplo prático} 
     \begin{center} 
@@ -117,6 +117,16 @@
   \begin{frame}{Mão na massa} 
     \begin{center} 
       \Large Gem {\texttt rails-latex}: \href{https://github.com/jacott/rails-latex}{\beamergotobutton{rails-latex}} 
+    \end{center}
+  \end{frame}
+  \begin{frame}{Requisitos} 
+    \begin{center} 
+      \begin{itemize}
+        \item {\texttt Gemfile}\\\mint{ruby}|gem 'rails-latex'|
+        \item {\texttt config/initializers/mime\_types.rb}\\{\scriptsize \mint{ruby}|Mime::Type.register "application/pdf", :pdf, ['text/pdf'], ['pdf']|}
+        \item {\texttt app/views/layouts/application.pdf.erbtex}
+        \item {\texttt app/views/controller/action.pdf.erb}
+      \end{itemize}
     \end{center}
   \end{frame}
   \begin{frame}[plain] 
