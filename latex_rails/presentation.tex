@@ -9,13 +9,13 @@
 \title{\LaTeX\ em aplicações Rails}
 \date{}
 \institute{
-  \begin{tabular}{c c}        
+  \begin{tabular}{c c}
     {\em www} & \url{http://badosu.com}\\
     {\em email} & \url{amadeusfolego@gmail.com}
   \end{tabular}
 }
 \begin{document}
-  \begin{frame}[plain] 
+  \begin{frame}[plain]
     \titlepage
   \end{frame}
   \begin{frame}{Apresentação}
@@ -34,10 +34,10 @@
           \item Livros \pause
             \begin{itemize}
               \item {\em The Art of Computer Programming (TAOCP) - 1969} \pause
-              \item {\em Concrete Mathematics - 1970} \pause 
+              \item {\em Concrete Mathematics - 1970} \pause
             \end{itemize}
           \item \MF\pause
-          \item \TeX\ 
+          \item \TeX\
         \end{itemize}
     \end{columns}
   \end{frame}
@@ -58,7 +58,7 @@
     \onslide<3>{$ \rightarrow $} Linguagem Turing-Completa\\\pause
     \onslide<4>{$ \rightarrow $} Extremamente extensivo\\\pause
     \onslide<5>{$ \rightarrow $} É apenas texto\\\pause
-    \onslide<6->{$ \rightarrow $} Expressões matemáticas\\\pause 
+    \onslide<6->{$ \rightarrow $} Expressões matemáticas\\\pause
       $$ \oint_{D} B\cdot n\ dS = 0 $$
     \begin{center}
       \onslide<6>\pause\href{doc/rogers}{\beamerbutton{Exemplo}}\\
@@ -102,25 +102,25 @@
     \onslide<2->{ $ \rightsquigarrow $ } É compilado\\\pause
     \onslide<3> { $ \rightsquigarrow $ } Barreira inicial de aprendizado
   \end{frame}
-  \begin{frame}{Motivação} 
+  \begin{frame}{Motivação}
     \onslide<1>{$ \nabla $} Mudança de paradigma $\rightarrow$ {\tiny Sites com conteúdo textual $ \implies $ Aplicações Web}\\\pause
     \onslide<2>{$ \nabla $} Geração de Documentos\\\pause
     \onslide<3>{$ \nabla $} Latex é apenas texto\\\pause
     \onslide<4>{$ \nabla $} Quantidade enorme de tipos de documento\\
   \end{frame}
-  \begin{frame}{Exemplo prático} 
-    \begin{center} 
+  \begin{frame}{Exemplo prático}
+    \begin{center}
       {\Huge Exemplo Prático}\\[1em]
       Uma aplicação Web em que o usuário pode criar apresentações, em formato pdf, utilizando a classe de documento beamer.
     \end{center}
   \end{frame}
-  \begin{frame}{Mão na massa} 
-    \begin{center} 
-      \Large Gem {\texttt rails-latex}: \href{https://github.com/jacott/rails-latex}{\beamergotobutton{rails-latex}} 
+  \begin{frame}{Mão na massa}
+    \begin{center}
+      \Large Gem {\texttt rails-latex}: \href{https://github.com/jacott/rails-latex}{\beamergotobutton{rails-latex}}
     \end{center}
   \end{frame}
-  \begin{frame}{Requisitos} 
-    \begin{center} 
+  \begin{frame}{Requisitos}
+    \begin{center}
       \begin{itemize}
         \item {\texttt Gemfile}\\\mint{ruby}|gem 'rails-latex'|
         \item {\texttt config/initializers/mime\_types.rb}\\{\scriptsize \mint{ruby}|Mime::Type.register "application/pdf", :pdf, ['text/pdf'], ['pdf']|}
@@ -129,7 +129,7 @@
       \end{itemize}
     \end{center}
   \end{frame}
-  \begin{frame}[plain] 
+  \begin{frame}[plain]
     \titlepage
   \end{frame}
 \end{document}
