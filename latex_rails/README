@@ -1,3 +1,11 @@
-You may want to checkout the ./slides-app, it is a git submodule
+== Compiling it
+
+You need to compile it with pdflatex, passing -shell-escape as option.
+
+You also need the minted package, which comes with the most recent latex distribution. And also needs pygmentize to run.
+
+== Example
+
+You may want to check out ./slides-app, it is a git submodule
 
 There are two branches, master and with-latex
