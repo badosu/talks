@@ -1,0 +1,3 @@
+[submodule "latex_rails/slides_app"]
+	path = latex_rails/slides_app
+	url = git@github.com:amadeusfolego/rails-latex-example.git
