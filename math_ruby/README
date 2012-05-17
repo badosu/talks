@@ -1,0 +1,5 @@
+== Compiling it
+
+You need to compile it with pdflatex, passing -shell-escape as option.
+
+You also need the minted package, which comes with the most recent latex distribution. And also needs pygmentize to run.
