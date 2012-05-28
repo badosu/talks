@@ -16,12 +16,27 @@
   \end{tabular}
 }
 \begin{document}
-  \frame[plain]{ \titlepage }
+  \frame[plain]{\titlepage}
+  \begin{frame}{Porquê?}
+    \begin{itemize}
+      \item Visualizar e extrair informações associadas a um grande conjunto de dados numéricos \pause
+      \item Manipulação de imagens, efetuar transformadas \pause
+      \item Simular modelos, otimizar parâmetros, minimizar funções \pause
+      \item Inferir estatísticas
+    \end{itemize}
+  \end{frame}
+  \begin{frame}{Características Desejadas}
+    \begin{itemize}
+      \item Manipulação de arrays numéricos de alta performance \pause
+      \item REPL (Read Print Eval Loop) prático \pause
+      \item Ferramentas de visualização (plotting)
+    \end{itemize}
+  \end{frame}
   \begin{frame}{Caso: Python/SciPy}
     \begin{itemize}
-      \item matplotlib \pause
-      \item numpy \pause
-      \item ipython -pylab
+      \item Ferramenta de visualização: matplotlib \pause
+      \item Manipulação numérica: numpy \pause
+      \item REPL: ipython -pylab
     \end{itemize}
   \end{frame}
   \begin{frame}[fragile]{NArray}
@@ -44,8 +59,8 @@ n = 10**8
     \pause
     \begin{minted}{ruby}
 # Array
-a = (1..n).to\_a
-b = (1..n).to\_a
+a = (1..n).to_a
+b = (1..n).to_a
 (1..n).map{|i| a[i]*b[i]}
     \end{minted}
     \pause
@@ -59,12 +74,38 @@ NArray.int(n).indgen * NArray.int(n).indgen
       \item O primeiro começou a travar a máquina após 4m30s
     \end{itemize}
 \end{frame}
-\begin{frame}{SciRuby}
-  \begin{itemize}
-    \item Ambição de prover capacidade científica similar ao SciPy \pause
-    \item Deve utilizar projetos como NArray e NMatrix em cima do ATLAS \pause
-    \item Última atualização há 6 meses
-  \end{itemize}
+  \begin{frame}{SciRuby}
+    \begin{itemize}
+      \item Ambição de prover capacidade científica similar ao SciPy \pause
+      \item Deve utilizar projetos como NMatrix em cima do ATLAS \pause
+      \item Última atualização há 6 meses \pause
+      \item Projeto muito ambicioso, perdeu tração, mas com bons frutos: \pause
+      \begin{itemize}
+        \item Visualization: rubyvis \pause
+        \item Statistics: statsample \pause
+        \item Numeric: minimization, integration, nmatrix \pause
+        \item Probability: distribution
+      \end{itemize}
+    \end{itemize}
+  \end{frame}
+  \begin{frame}{NMatrix}
+    \begin{itemize}
+      \item Ambição de prover capacidade científica similar ao SciPy \pause
+    \end{itemize}
+  \end{frame}
+  \begin{frame}[fragile]{Borel}
+    \begin{itemize}
+      \item Operações em conjuntos ordenados \pause
+      \item Único requisito é incluir Comparable, e compatibilidade numérica para alguns métodos \pause
+    \end{itemize}
+    \pause
+    \begin{minted}{ruby}
+Interval[1,5] | Interval[7,9] == Interval[[1,5],[7,9]]
+    \end{minted}
+    \pause
+    \begin{minted}{ruby}
+Interval['a','f'] ^ Interval['c','g'] == Interval['c','f']
+    \end{minted}
 \end{frame}
   \begin{frame}[plain]
     \titlepage
